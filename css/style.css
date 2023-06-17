@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.input-areas{
+    display: flex;
+}
+.input-areas>div{
+    margin-right: 20px;
+}
+.btn-input{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.res-btn{
+    margin-right: 15px;
+}
+.clr-btn{
+    margin-right: 15px;
+}
+.btn-area{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.clr-area-btn{
+    margin-right: 15px;
+}
+.download-btn{
+    margin-right: 15px;
+}
+.green-border {
+    box-shadow: 0 0 10px green;
+}
+.load{
+    margin-right: 15px;
+}
+.area{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>application</title>
+  </head>
+  <body>
+    <main>
+      <div class="input-areas">
+        <div>
+          <p>Ідентиф. параметра</p>
+          <input type="text" id="idpar" class="idpar"/>
+        </div>
+
+        <div>
+          <p>Повна назва параметра</p>
+          <input type="text" id="fullname" />
+        </div>
+
+        <div>
+          <p>Тип параметра</p>
+          <input type="text" id="type" />
+        </div>
+
+        <div>
+          <p>Номер каналу</p>
+          <input type="text" id="channel" />
+        </div>
+
+        <div>
+          <p>Маска або номер
+            розряду</p>
+          <input type="text" id="mask" />
+        </div>
+      </div>
+
+      <div class="btn-input">
+        <button class="res-btn" onclick="showResult()">Результат</button>
+        <button class="clr-btn" onclick="reset()">Очистити</button>
+      </div>
+
+      <div class="area">
+        <textarea id="resultArea" rows="5" cols="80" readonly></textarea>
+      </div>
+
+      <div class="btn-area">
+        <button class="clr-area-btn" onclick="resetArea()">Очистити</button>
+        <button class="download-btn" onclick="loadTextFile()">Завантажити на ПК</button>
+        <input type="file" id="fileInput" class="load">
+        <button onclick="loadFile()" class="load">Загрузить файл</button>
+      </div>
+    </main>
+  </body>
+</html>
