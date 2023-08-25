@@ -56,11 +56,11 @@ function validateInput1() {
   if (!regex.test(idparValue)) {
     idpar.value = '';
     idpar.classList.remove("green-border");
-    alert("Помилка! Недопустимі символи!");
+    alert("Помилка! Недопустимі символи або поле порожнє!");
   } else if (idparValue.length < 1 || idparValue.length > 6) {
     idpar.value = '';
     idpar.classList.remove("green-border");
-    alert("Помилка! Недопустима кількість символів!");
+    alert("Помилка! Недопустима кількість символів або поле порожнє!");
   } else {
     idpar.classList.add("green-border");
   }
@@ -71,7 +71,7 @@ function validateInput2() {
   if (fullnameValue.length < 15 || fullnameValue.length > 60) {
     fullname.value = '';
     fullname.classList.remove("green-border");
-    alert("Помилка! Недопустима кількість символів!");
+    alert("Помилка! Недопустима кількість символів або поле порожнє!");
   } else {
     fullname.classList.add("green-border");
   }
@@ -83,7 +83,7 @@ function validateInput3() {
     } else {
         type.value = '';
         type.classList.remove("green-border");
-        alert("Помилка! Недопустимий тип параметру!");
+        alert("Помилка! Недопустимий тип параметру або поле порожнє!");
     }
   }
   function validateInput4() {
@@ -106,7 +106,7 @@ function validateInput3() {
     if (masknum<0 || masknum>7 || letters) {
       mask.value = '';
       mask.classList.remove("green-border");
-      alert("Помилка! Недопустимий номер розряду!");
+      alert("Помилка! Недопустимий номер розряду або поле порожнє!");
     } else {
       mask.value = Math.pow(2,masknum)
       mask.classList.add("green-border");
@@ -128,28 +128,26 @@ function validateInput3() {
 }
 
 function loadFile() {
-  var fileInput = document.getElementById('fileInput');
-
-
-  var file = fileInput.files[0];
-  var reader = new FileReader();
+  let fileInput = document.getElementById('fileInput');
+  let file = fileInput.files[0];
+  let reader = new FileReader();
 
   reader.onload = function(e) {
-    resultArea.value = e.target.result;
+    e = e.target.result;
   };
 
   reader.readAsText(file);
 }
 
-
 function loadTextFile() {
-var text = resultArea.value;
+let text = resultArea.value;
+let Time = new Date();
+let currentTime = Time.getHours() + ":" + Time.getMinutes() + ":" + Time.getSeconds();
+let blob = new Blob([text], { type: "text/plain" });
 
-var blob = new Blob([text], { type: "text/plain" });
-
-var link = document.createElement("a");
+let link = document.createElement("a");
 link.href = URL.createObjectURL(blob);
-link.download = "file.txt";
+link.download = "file " + currentTime + ".txt" ;
 link.click();
 
 URL.revokeObjectURL(link.href);

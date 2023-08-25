@@ -4,6 +4,11 @@ body{
     align-items: center;
     height: 100vh;
 }
+h4{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
 .input-areas{
     display: flex;
 }
